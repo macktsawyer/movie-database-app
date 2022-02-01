@@ -1,0 +1,25 @@
+.fullContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.topMovies {
+    height: 90vh;
+    width: 20vw;
+    margin: 5px;
+    background-color: grey;
+}
+
+.search {
+    height: 90vh;
+    width: 60vw;
+    margin: 5px;
+    background-color: lightgrey;
+}
+
+.TopComments {
+    height: 90vh;
+    width: 20vw;
+    margin: 5px;
+    background-color: darkgrey;
+}
