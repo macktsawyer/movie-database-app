@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
+import '../Styles/TopComments.scss';
 
 const TopComments = () => {
     const [ topComments, setTopComments ] = useState([]);
@@ -10,11 +11,11 @@ const TopComments = () => {
     },[])
 
     const displayComments = topComments
-        .splice(0, 10)
         .map((i) => {
             return (
-                <ul key={i._id}>
+                <ul className="topCommentsUL" key={i._id}>
                     <li key={i._id}>{i._id}</li>
+                    <li key={i.count}>{i.count}</li>
                 </ul>
             )
         })

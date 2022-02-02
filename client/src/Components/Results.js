@@ -16,7 +16,7 @@ const Results = ({searchCriteria}) => {
     const pageCount = Math.ceil(searchResults.length / dataPerPage);
 
     const displayResults = searchResults
-        .splice(pagesVisited, pagesVisited + dataPerPage)
+        .slice(pagesVisited, pagesVisited + dataPerPage)
         .map((i) => {
             return (
                 <Paper key={i._id} className='displayedResults'>
