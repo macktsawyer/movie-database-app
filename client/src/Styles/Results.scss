@@ -25,7 +25,19 @@
     li {
         display: inline-block;
         margin: 4px;
-        padding: 1px;
+        padding: 4px;
         border: 1px solid black;
     }
+}
+
+.resultsContainer {
+    margin-top: 20px;
+    padding-left: 5px;
+}
+
+.displayedResults {
+    width: 58vw;
+    margin: 5px;
+    padding: 2px;
+    border: 1px solid black;
 }

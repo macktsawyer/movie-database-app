@@ -18,8 +18,6 @@ const TopMovies = () => {
             )
         })
 
-    console.log(topMovies)
-
     return (
         <div>
             <ul className={"topMoviesList"}>
