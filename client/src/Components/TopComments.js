@@ -24,7 +24,7 @@ const TopComments = () => {
 
     return (
         <div>
-            <p>Top Commenters</p>
+            <h3 style={{marginLeft: "5px"}}>Top Commenters</h3>
             { displayComments }
         </div>
     )
