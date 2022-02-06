@@ -15,7 +15,7 @@ const TopComments = () => {
             return (
                 <ul className="topCommentsUL" key={i._id}>
                     <li key={i._id}>{i._id}</li>
-                    <li key={i.count}>{i.count}</li>
+                    <li key={i.count}>Total Comments: {i.count}</li>
                 </ul>
             )
         })
