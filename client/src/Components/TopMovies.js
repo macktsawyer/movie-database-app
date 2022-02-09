@@ -14,12 +14,12 @@ const TopMovies = () => {
         .splice(0, 10)
         .map((i) => {
             return (
-                <ul>
+                <ul className={"topMoviesList"}>
                     <li key={i._id}>{i.title}</li>
-                    <li>{i.rating.map((r) => {
+                    {i.imdb.map((r) => {
                         return (
-                        {r.imdb})
-                    })}</li>
+                        <li>{r.rating}</li>)
+                    })}
                 </ul>
             )
         })
@@ -27,9 +27,7 @@ const TopMovies = () => {
     return (
         <div>
             <h3 style={{marginLeft: "45px"}}>Top Movies</h3>
-            <ul className={"topMoviesList"}>
-                { displayTop }
-            </ul>
+            { displayTop }
         </div>
     )
 }
