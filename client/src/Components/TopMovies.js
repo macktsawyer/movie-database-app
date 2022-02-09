@@ -14,7 +14,13 @@ const TopMovies = () => {
         .splice(0, 10)
         .map((i) => {
             return (
-                <li key={i._id}>{i.title}</li>
+                <ul>
+                    <li key={i._id}>{i.title}</li>
+                    <li>{i.rating.map((r) => {
+                        return (
+                        {r.imdb})
+                    })}</li>
+                </ul>
             )
         })
 
