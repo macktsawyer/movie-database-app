@@ -40,8 +40,13 @@ app.get('/getMovies/:movie', (req, res) => {
 });
 
 app.get('/top', (req, res) => {
-    let rating = { "imdb.rating": { $gt: 8.5 } }
-    MovieModel.find(rating, (err, result) => {
+    MovieModel.find({ 
+        'imdb.rating': { $gt: 8.5}
+    })
+    .limit(10)
+    .sort({'imdb.rating': -1})
+    .exec(
+    function(err, result) {
         if (err) {
             res.json(err)
         } else {
@@ -49,16 +54,6 @@ app.get('/top', (req, res) => {
         }
     })
 });
-
-// app.get('/comments', (req, res) => {
-//     CommentModel.find({}, (err, result) => {
-//         if (err) {
-//             res.json(err)
-//         } else {
-//             res.json(result)
-//         }
-//     })
-// });
 
 app.get('/topComments', (req, res) => {
     CommentModel.aggregate([{ $group: { _id: '$name', count: { $sum: 1 }}}, 
