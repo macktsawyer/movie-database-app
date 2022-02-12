@@ -5,6 +5,7 @@ const dotenv = require('dotenv');
 const MovieModel = require('./models/Movies');
 const CommentModel = require('./models/Comments');
 const cors = require('cors');
+require('dotenv').config(); 
 
 
 app.use(express.json());
@@ -68,7 +69,7 @@ app.get('/topComments', (req, res) => {
     })
 });
 
-app.listen(3001, () => {
+app.listen(process.env.PORT || 3001, () => {
     console.log('You are connected')
 });
 
