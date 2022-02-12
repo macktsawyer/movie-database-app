@@ -11,7 +11,6 @@ const PORT = process.env.PORT || '3001';
 
 app.use(express.json());
 app.use(cors());
-app.use(express.static(path.join(__dirname, 'build')));
 dotenv.config();
 
 const mongooseAPI = process.env.MONGOOSE_API;
@@ -19,10 +18,6 @@ const mongooseAPI = process.env.MONGOOSE_API;
 mongoose.connect(
     `${mongooseAPI}`
 );
-
-app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
 
 app.get('/getMovies', (req, res) => {
     MovieModel.find({}, (err, result) => {
