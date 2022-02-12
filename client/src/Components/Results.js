@@ -39,10 +39,10 @@ const Results = ({searchCriteria}) => {
 
     useEffect(() => {
         if (searchCriteria) {
-            Axios.get(`http://localhost:3001/getMovies/${searchCriteria}`)
+            Axios.get(`https://movie-search-database-app.herokuapp.com/getMovies/${searchCriteria}`)
                 .then(res => setSearchResults(res.data))
         } else if (!searchCriteria) {
-            Axios.get(`http://localhost:3001/getMovies/Fox`)
+            Axios.get(`https://movie-search-database-app.herokuapp.com/getMovies/Fox`)
                 .then(res => setSearchResults(res.data))
         }
     },[searchCriteria])

@@ -6,7 +6,7 @@ const TopMovies = () => {
     const [topMovies, setTopMovies] = useState([]);
 
     useEffect(() => {
-        Axios.get('http://localhost:3001/top')
+        Axios.get('https://movie-search-database-app.herokuapp.com/top')
             .then(res => setTopMovies(res.data))
     },[])
 
