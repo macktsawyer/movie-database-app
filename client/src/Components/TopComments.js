@@ -20,8 +20,6 @@ const TopComments = () => {
             )
         })
 
-    console.log(topComments)
-
     return (
         <div>
             <h3 style={{marginLeft: "5px"}}>Top Commenters</h3>

@@ -12,17 +12,14 @@ const TopMovies = () => {
 
     const displayTop = topMovies
         .map((i) => {
+            console.log(i._id)
             return (
-                <ul key={i._id} className={"topMoviesList"}>
-                    <li key={i._id}>{i.title} - {i.imdb.map((r) => {
-                        if (r.rating)
-                        return (
-                        <span key={r.rating}>{r.rating}</span>
-                        )
-                    })}</li>
+                <ul key={i.id} className="topMoviesList">
+                <li key={i.id}><span>{i._id.title} - {i._id.rating}</span></li>
                 </ul>
-            )
-        })
+                )
+        }
+    )
 
     return (
         <div>
