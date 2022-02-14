@@ -41,11 +41,18 @@ app.get('/getMovies/:movie', (req, res) => {
 });
 
 app.get('/top', (req, res) => {
-    MovieModel.find({ 
-        'imdb.rating': { $gt: 8.5}
-    })
+    MovieModel.aggregate(
+        [
+            {$match: {"imdb.rating": {$gt: 8.5}}},
+            {$group: {
+                _id: {title: "$title",
+                rating: "$imdb.rating"},
+                id: {$addToSet: "$_id"}
+            }},
+            {$sort: {"_id.rating": -1}}
+        ]
+    )
     .limit(10)
-    .sort({'imdb.rating': -1})
     .exec(
     function(err, result) {
         if (err) {
@@ -54,7 +61,7 @@ app.get('/top', (req, res) => {
             res.json(result)
         }
     })
-});
+})
 
 app.get('/topComments', (req, res) => {
     CommentModel.aggregate([{ $group: { _id: '$name', count: { $sum: 1 }}}, 
