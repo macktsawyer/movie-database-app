@@ -12,7 +12,6 @@ const TopMovies = () => {
 
     const displayTop = topMovies
         .map((i) => {
-            console.log(i._id)
             return (
                 <ul key={i.id} className="topMoviesList">
                 <li key={i.id}><span>{i._id.title} - {i._id.rating}</span></li>

@@ -18,10 +18,21 @@ const Results = ({searchCriteria}) => {
     const displayResults = searchResults
         .slice(pagesVisited, pagesVisited + dataPerPage)
         .map((i) => {
+            console.log(i)
             return (
                 <Paper key={i._id} className='displayedResults'>
                     <h4>{i.title}</h4>
                     <h5>{i.year}</h5>
+                    <h5>{i.imdb.map((x) => {
+                        return (
+                            <p key={x.rating}><span>IMDB Rating - </span>{x.rating}</p>
+                            )
+                    })}</h5>
+                    <ul className="inlineList">{i.genres.map((g) => {
+                        return (
+                        <li key={g}>{g}</li>
+                            )
+                    })}</ul>
                     <p>{i.plot}</p>
                     <ul className={"castList"}>{i.cast.map((r) => {
                         return (
