@@ -38,7 +38,7 @@
 .displayedResults {
     width: 58vw;
     margin: 5px;
-    padding: 2px;
+    padding: 4px;
     border: 1px solid rgb(214, 211, 211);
 }
 
@@ -50,4 +50,8 @@
         padding: 1px;
         margin-right: 40px;
     }
+}
+
+.moviePoster {
+    height: 50%;
 }

@@ -21,25 +21,31 @@ const Results = ({searchCriteria}) => {
             console.log(i)
             return (
                 <Paper key={i._id} className='displayedResults'>
-                    <h4>{i.title}</h4>
-                    <h5>{i.year}</h5>
-                    <h5>{i.imdb.map((x) => {
-                        return (
-                            <p key={x.rating}><span>IMDB Rating - </span>{x.rating}</p>
-                            )
-                    })}</h5>
-                    <ul className="inlineList">{i.genres.map((g) => {
-                        return (
-                        <li key={g}>{g}</li>
-                            )
-                    })}</ul>
-                    <p>{i.plot}</p>
-                    <ul className={"castList"}>{i.cast.map((r) => {
-                        return (
-                            <li key={r}>{r}</li>
-                            )
-                    })}</ul>
-                    <img alt="Movie Poster" style={{width:"200px"}} src={i.poster}></img>
+                    <Grid container direction="row" spacing={4}>
+                        <Grid item xs={4} className="moviePoster">
+                            <img alt="Movie Poster" style={{width:"200px"}} src={i.poster}></img>
+                        </Grid>
+                        <Grid item xs={8} direction="column">
+                            <h4>{i.title}</h4>
+                            <h5>{i.year}</h5>
+                            <h5>{i.imdb.map((x) => {
+                                return (
+                                    <p key={x.rating}><span>IMDB Rating - </span>{x.rating}</p>
+                                    )
+                            })}</h5>
+                            <ul className="inlineList">{i.genres.map((g) => {
+                                return (
+                                <li key={g}>{g}</li>
+                                    )
+                            })}</ul>
+                            <p>{i.plot}</p>
+                            <ul className={"castList"}>{i.cast.map((r) => {
+                                return (
+                                    <li key={r}>{r}</li>
+                                    )
+                            })}</ul>
+                        </Grid>
+                    </Grid>
                 </Paper>
             )
         });
