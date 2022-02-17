@@ -25,7 +25,7 @@ const Results = ({searchCriteria}) => {
                         <Grid item xs={4} className="moviePoster">
                             <img alt="Movie Poster" style={{width:"200px"}} src={i.poster}></img>
                         </Grid>
-                        <Grid item xs={8} direction="column">
+                        <Grid item xs={8}>
                             <h4>{i.title}</h4>
                             <h5>{i.year}</h5>
                             <h5>{i.imdb.map((x) => {
@@ -39,7 +39,7 @@ const Results = ({searchCriteria}) => {
                                     )
                             })}</ul>
                             <p>{i.plot}</p>
-                            <ul className={"castList"}>{i.cast.map((r) => {
+                            <ul className="castList">{i.cast.map((r) => {
                                 return (
                                     <li key={r}>{r}</li>
                                     )
