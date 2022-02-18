@@ -11,13 +11,13 @@
         border-radius: 5px;
         cursor: pointer;
     }
+    a:hover {
+        background-color: rgb(181, 229, 248);
+    }
 }
 
-.paginationActive {
-    background: grey;
-    height: 40px;
-    display: flex;
-    justify-content: center;
+.paginationActive a {
+    background-color: rgb(181, 229, 248);
 }
 
 .castList {
