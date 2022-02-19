@@ -28,6 +28,7 @@ const Results = ({searchCriteria}) => {
                         <Grid item xs={8}>
                             <h4>{i.title}</h4>
                             <h5>{i.year}</h5>
+                            {i.rated && <h5>Rated - {i.rated}</h5>}
                             <h5>{i.imdb.map((x) => {
                                 return (
                                     <p key={x.rating}><span>IMDB Rating - </span>{x.rating}</p>
