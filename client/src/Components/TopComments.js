@@ -14,7 +14,7 @@ const TopComments = () => {
         .map((i) => {
             return (
                 <ul className="topCommentsUL" key={i._id}>
-                    <li key={i._id}>{i._id}</li>
+                    <li key={i._id}><strong>{i._id}</strong></li>
                     <li key={i.count}>Total Comments: {i.count}</li>
                 </ul>
             )
