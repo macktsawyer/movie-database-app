@@ -14,7 +14,7 @@ const TopMovies = () => {
         .map((i) => {
             return (
                 <ul key={i.id} className="topMoviesList">
-                <li key={i.id}><span>{i._id.title} - {i._id.rating}</span></li>
+                <li key={i.id}><span><strong>{i._id.title}</strong> - {i._id.rating}</span></li>
                 </ul>
                 )
         }
