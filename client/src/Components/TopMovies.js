@@ -22,7 +22,7 @@ const TopMovies = () => {
 
     return (
         <div>
-            <h3 style={{marginLeft: "45px"}}>Top Movies</h3>
+            <h3 style={{marginLeft: "25px"}}>Top Movies</h3>
             { displayTop }
         </div>
     )
