@@ -6,7 +6,7 @@ const TopComments = () => {
     const [ topComments, setTopComments ] = useState([]);
 
     useEffect(() => {
-        Axios.get('https://movie-search-database-app.herokuapp.com/topComments')
+        Axios.get('https://new-movie-database-project.herokuapp.com/topComments')
             .then(res => setTopComments(res.data))
     },[])
 
