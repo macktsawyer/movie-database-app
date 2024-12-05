@@ -10,15 +10,15 @@ import '../Styles/Results.scss';
 const Results = ({searchCriteria}) => {
     const [searchResults, setSearchResults] = useState([]);
     const [pageNumber, setPageNumber] = useState(0);
+    const [isLoading, setIsLoading] = useState(true);
 
     const dataPerPage = 10;
     const pagesVisited = pageNumber * dataPerPage;
     const pageCount = Math.ceil(searchResults.length / dataPerPage);
 
-    const displayResults = searchResults
+    const displayResults = searchResults.length ? searchResults
         .slice(pagesVisited, pagesVisited + dataPerPage)
         .map((i) => {
-            console.log(i)
             return (
                 <Paper key={i._id} className='displayedResults'>
                     <Grid container direction="row" spacing={4}>
@@ -49,7 +49,7 @@ const Results = ({searchCriteria}) => {
                     </Grid>
                 </Paper>
             )
-        });
+        }) : 'No Results';
 
     const changePage = ({selected}) => {
         setPageNumber(selected);
@@ -59,9 +59,11 @@ const Results = ({searchCriteria}) => {
         if (searchCriteria) {
             Axios.get(`https://new-movie-database-project-324cacc8b1a4.herokuapp.com/getMovies/${searchCriteria}`)
                 .then(res => setSearchResults(res.data))
+                .then(setIsLoading(false))
         } else if (!searchCriteria) {
             Axios.get(`https://new-movie-database-project-324cacc8b1a4.herokuapp.com/getMovies/Fox`)
                 .then(res => setSearchResults(res.data))
+                .then(setIsLoading(false))
         }
     },[searchCriteria])
 
@@ -73,7 +75,7 @@ const Results = ({searchCriteria}) => {
                         {/* {searchResults.length}
                         {searchCriteria}  */}
                     </Paper>
-                    {displayResults}
+                    {isLoading ? <p style={{color: "white"}}>Loading...</p> : displayResults}
                     <ReactPaginate 
                         previousLabel={"Previous"}
                         nextLabel={"Next"}
