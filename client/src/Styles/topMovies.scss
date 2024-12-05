@@ -1,7 +1,17 @@
-.topMoviesList {
-    list-style: none;
-    margin-top: 5px;
-    li {
-        margin-top: 25px;
+
+.topMovieContainer {
+    background-image: url("/Images/curtain.jpg");
+    background-size: contain;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+    margin-top: -1vw;
+    .topMoviesList {
+        list-style: none;
+        margin-top: 5px;
+        li {
+            margin-top: 25px;
+        }
     }
 }
+

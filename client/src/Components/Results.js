@@ -57,10 +57,10 @@ const Results = ({searchCriteria}) => {
 
     useEffect(() => {
         if (searchCriteria) {
-            Axios.get(`https://new-movie-database-project.herokuapp.com/getMovies/${searchCriteria}`)
+            Axios.get(`https://new-movie-database-project-324cacc8b1a4.herokuapp.com/getMovies/${searchCriteria}`)
                 .then(res => setSearchResults(res.data))
         } else if (!searchCriteria) {
-            Axios.get(`https://new-movie-database-project.herokuapp.com/getMovies/Fox`)
+            Axios.get(`https://new-movie-database-project-324cacc8b1a4.herokuapp.com/getMovies/Fox`)
                 .then(res => setSearchResults(res.data))
         }
     },[searchCriteria])

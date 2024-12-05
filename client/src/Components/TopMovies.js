@@ -6,7 +6,7 @@ const TopMovies = () => {
     const [topMovies, setTopMovies] = useState([]);
 
     useEffect(() => {
-        Axios.get('https://new-movie-database-project.herokuapp.com/server/top')
+        Axios.get('https://new-movie-database-project-324cacc8b1a4.herokuapp.com/top')
             .then(res => setTopMovies(res.data))
     },[])
 
@@ -21,7 +21,7 @@ const TopMovies = () => {
     )
 
     return (
-        <div>
+        <div className="topMovieContainer">
             <h3 style={{marginLeft: "25px"}}>Top Movies</h3>
             { displayTop }
         </div>
